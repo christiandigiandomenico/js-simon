@@ -11,4 +11,11 @@ const intervalloTempo = setInterval(function () {
     let minuti = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let secondi = Math.floor((distance % (1000 * 60)) / 1000);
 
+    document.getElementById("tempo").innerHTML = giorni + "-Giorni " + ore + "-Ore "
+        + minuti + "-Minuti " + secondi + "-Secondi ";
+
+    if (distance < 0) {
+        clearInterval(intervalloTempo);
+        document.getElementById("tempo").innerHTML = "FINITO";
+    }
 }, 1000);
